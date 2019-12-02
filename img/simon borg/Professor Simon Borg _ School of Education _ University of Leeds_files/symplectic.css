@@ -1,0 +1,107 @@
+/* Make the profile image print */
+@media print {
+    .rule-image span img {
+        display: block !important;
+        clip: unset;
+        height: auto;
+        width: auto;
+        left: 0px;
+    }
+}
+
+/* For the doi and whiterose images */
+#symplectic div p img {
+    width: 24px;
+    display: inline;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+/* for the block-level elements */
+#symplectic .typeHeader, #symplectic .typeBody {
+    font-family: freight-sans-pro,sans-serif;
+    color: #4a4a4a;
+    border: 1px solid #ddd5cc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+#symplectic .typeHeader {
+    background: #f4f2f0;
+    line-height: 130%;
+    cursor: pointer;
+    padding-right: 26px;
+}
+#symplectic .typeBody {
+    margin-top: -10px;
+}
+#symplectic h4 a,
+#symplectic h4 a:link,
+#symplectic h4 a:visited,
+#symplectic h4 a:hover,
+#symplectic h4 a:active {
+    color: #4a4a4a;
+    border-bottom-width: 0px;
+}
+#symplectic h4::after {
+    font-family: tk-icons!important;
+    speak: none;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    text-transform: none;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    float: right;
+}
+#symplectic h4.closed::after {
+    content: "\EA08";
+}
+#symplectic h4.open::after {
+    content: "\EA0B";
+}
+
+/* Styles the various publicationStyles have in common: */
+#symplectic .authors {
+    font-weight: bold;
+}
+#symplectic #conference_paper_div .harvardleedsharvard .title {
+    font-weight: normal;
+    font-style: normal;
+}
+#symplectic .title,
+#symplectic .parent-title,
+#symplectic .startdate,
+#symplectic .finishdate,
+#symplectic .publish-status,
+#symplectic .journal {
+    font-style: italic;
+}
+#symplectic .volume {
+    font-weight: bold;
+}
+
+/* Some publicationStyles override the default: */
+/* 1: MHRA */
+#symplectic .mhra {
+    padding-left: 3em;
+    text-indent: -3em;
+}
+
+#symplectic .mhra .authors,
+#symplectic .mhra .volume {
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2: Harvard (Leeds Harvard) */
+#symplectic .harvardleedsharvard .publishedproceedings,
+#symplectic .harvardleedsharvard .startdate,
+#symplectic .harvardleedsharvard .finishdate {
+    font-style: italic;
+}
+#symplectic .harvardleedsharvard .authors, #symplectic .publicationstyle .authors {
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,51 @@
+toTitleCase = (function(str) {
+    return str.replace(/(?:^|\s)\w/g, function(match) {
+        return match.toUpperCase();
+    }).replace(/_/g, ' ');
+});
+
+publicationsToHTML = (function(data) {
+    var ct = 0;
+    $.each(data.publications, function(k, list) {
+        var items = [];
+        if (list && list.length != 0) {
+            $.each(list, function(key, pub) {
+                items.push(pub.html);
+            });
+            $('#' + k + '_div').html(items.join('\n'));
+            $('#' + k + '_h4').show();
+            ct += 1;
+        }
+    });
+
+    if (ct > 0) {
+        $('#symplectic').show();
+    } else {
+        $('#symplectic').hide();
+    }
+
+    $('#symplectic > span').hide();
+
+    if (dataGetQuery.tries < 3 && (data.lastupdate < too_old || !data.lastupdate || !data.count)) {
+        dataGetQuery.tries += 1;
+        $('#symplectic').show();
+        $('#symplectic > span').show();
+        $.getJSON(dataURL, dataGetQuery, publicationsToHTML);
+    }
+});
+
+$(document).ready(function() {
+    $('#symplectic > h4').each(function() {
+        $(this).click(function() {
+            if ($(this).hasClass('open')) {
+                    $(this).removeClass('open');
+                    $(this).addClass('closed');
+                    $(this).next().hide();
+                } else {
+                    $(this).addClass('open');
+                    $(this).removeClass('closed');
+                    $(this).next().show();
+                }
+        });
+    });
+});

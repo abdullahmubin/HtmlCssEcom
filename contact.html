@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google fonts -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Courgette|Kaushan+Script|Lobster"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,400italic,300italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Twitter Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <style>
+      /* Style inputs */
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      /* Style the container/contact section */
+
+      /* Create two columns that float next to eachother */
+      .column {
+        float: left;
+        width: 50%;
+        margin-top: 6px;
+        padding: 20px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .floating-search-right {
+        position: absolute;
+        right: 15px;
+        top: 5px;
+      }
+      .hero {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        -moz-transform: translate3d(-50%, -50%, 0);
+        -ms-transform: translate3d(-50%, -50%, 0);
+        -o-transform: translate3d(-50%, -50%, 0);
+        transform: translate3d(-50%, -50%, 0);
+      }
+      .hero h1 {
+        font-size: 6em;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+
+      .fade-carousel .carousel-inner .item .hero {
+        opacity: 0;
+        -webkit-transition: 2s all ease-in-out 5s;
+        -moz-transition: 2s all ease-in-out 5s;
+        -ms-transition: 2s all ease-in-out 5s;
+        -o-transition: 2s all ease-in-out 5s;
+        transition: 2s all ease-in-out 5s;
+      }
+      .fade-carousel .carousel-inner .item.active .hero {
+        opacity: 1;
+        -webkit-transition: 2s all ease-in-out 5s;
+        -moz-transition: 2s all ease-in-out 5s;
+        -ms-transition: 2s all ease-in-out 5s;
+        -o-transition: 2s all ease-in-out 5s;
+        transition: 2s all ease-in-out 5s;
+      }
+
+      .navbar {
+        position: relative;
+      }
+      .brand {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px !important;
+        display: block;
+      }
+
+      .text-right {
+        margin-right: 34px;
+      }
+
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column,
+        input[type="submit"] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="preloader">
+      <img src="img/preloader.gif" alt="" />
+    </div>
+
+    <header class="header">
+      <div class="header-top-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-4 hidden-xs">
+              <div class="mainmenu">
+                <div class="navbar-header">
+                  <button
+                    type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                  >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <div class="social-links">
+                      <a
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="Find me on Facebook"
+                        href="http://facebook.com/"
+                        target="_blank"
+                        ><i class="fa fa-facebook"></i
+                      ></a>
+                      <a
+                        data-toggle="tooltip"
+                        data-placement="bottom"
+                        title="My Twitter profile"
+                        href="http://twitter.com/"
+                        target="_blank"
+                        ><i class="fa fa-twitter"></i
+                      ></a>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 hidden-xs">
+              <ul class="nav navbar-nav">
+                <li class="logo" style="float: right">
+                  <a href="index.html" style="font-size:30px;">case de moda</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 hidden-xs">
+              <div class="social-links text-right pull-right">
+                <a
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Product"
+                  href="javascript:void(0);"
+                  ><i class="fa fa-shopping-cart"><span>(100)</span></i></a
+                >
+                <div class="floating-search-right">
+                  <form action="">
+                    <input type="search" placeholder="type keywords" />
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-8 col-sm-8 col-xs-8 visible-xs">
+              <div class="mainmenu">
+                <!-- <div class="navbar-collapse collapse">  -->
+                <ul class="nav navbar-nav">
+                  <li class="logo" style="text-align: left;">
+                    <a href="index.html" style="font-size:30px;"
+                      >case de moda</a
+                    >
+                  </li>
+                </ul>
+                <!-- </div>                                                                                     -->
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 visible-xs">
+              <div class="social-links text-right pull-right">
+                <a
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Product"
+                  href="javascript:void(0);"
+                  ><i class="fa fa-shopping-cart"
+                    ><span class="circle">100</span></i
+                  ></a
+                >
+                <div class="floating-search-right" style="right:-25px">
+                  <form action="">
+                    <input type="search" placeholder="type keywords" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-bottom-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="menu">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li>
+                    <a href="index.html"
+                      >Category
+                      <i class="fa fa-angle-down" aria-hidden="true"></i
+                    ></a>
+                    <ul>
+                      <li>
+                        <a href="#">Men</a>
+                        <ul>
+                          <li><a href="#">T-Shirt</a></li>
+                          <li><a href="#">Suit</a></li>
+                          <li><a href="#">Shoes</a></li>
+                          <li><a href="#">Shirt</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">Kids</a>
+                        <ul>
+                          <li><a href="#">T-Shirt</a></li>
+                          <li><a href="#">Suit</a></li>
+                          <li><a href="#">Shoes</a></li>
+                          <li><a href="#">Shirt</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">Female</a>
+                        <ul>
+                          <li><a href="#">T-Shirt</a></li>
+                          <li><a href="#">Suit</a></li>
+                          <li><a href="#">Shoes</a></li>
+                          <li><a href="#">Shirt</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">Others</a>
+                        <ul>
+                          <li><a href="#">Others</a></li>
+                          <li><a href="#">Others</a></li>
+                          <li><a href="#">Others</a></li>
+                          <li><a href="#">Others</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div style="text-align:center">
+        <h2>Contact Us</h2>
+        <p>Swing by for a cup of coffee, or leave us a message:</p>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="img/location.jpg" style="width:100%" />
+        </div>
+        <div class="column">
+          <form action="">
+            <label for="fname">First Name</label>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Your name.."
+            />
+            <label for="lname">Last Name</label>
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name.."
+            />
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select>
+            <label for="subject">Subject</label>
+            <textarea
+              id="subject"
+              name="subject"
+              placeholder="Write something.."
+              style="height:170px"
+            ></textarea>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="footer-wid">
+                  <h2 class="wid-title font-style-title">case de moda</h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book. It has survived not only five centuries, but
+                    also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="footer-wid">
+                  <h2 class="wid-title font-style-title">Facebook</h2>
+                  <div class="single-footer-post">
+                    <a href="single.html">
+                      <img src="img/1.jpg" alt="" class="footer-post-thumb" />
+                      <h2>Lorem Ipsum</h2>
+                    </a>
+                    <p class="post-meta-footer">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry
+                    </p>
+                  </div>
+  
+                  <div class="single-footer-post">
+                    <a href="single.html">
+                      <img src="img/3.jpg" alt="" class="footer-post-thumb" />
+                      <h2>Lorem Ipsum</h2>
+                    </a>
+                    <p class="post-meta-footer">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-3 col-sm-6">
+                <div class="footer-wid">
+                  <h2 class="wid-title font-style-title">Twitter</h2>
+                  <div class="single-footer-post">
+                    <a href="single.html">
+                      <img src="img/2.jpg" alt="" class="footer-post-thumb" />
+                      <h2>Lorem Ipsum</h2>
+                    </a>
+                    <p class="post-meta-footer">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry
+                    </p>
+                  </div>
+                  <div class="single-footer-post">
+                    <a href="single.html">
+                      <img src="img/1.jpg" alt="" class="footer-post-thumb" />
+                      <h2>Lorem Ipsum</h2>
+                    </a>
+                    <p class="post-meta-footer">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry
+                    </p>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-3 col-sm-6">
+                <div class="footer-wid">
+                  <h2 class="wid-title font-style-title">be our friend</h2>
+                  <p>
+                    Nam liber tempor cum soluta nobis eleifend option congue nihil
+                    imperdiet.
+                  </p>
+  
+                  <div class="newsletter-subscribe">
+                    <form action="">
+                      <input type="email" placeholder="Your emai address" />
+                      <input type="submit" value="Subscribe" />
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-10">
+                <div class="copyright-text">
+                  <p>
+                      made with
+                    <i class="fa fa-heart"></i> 
+                   
+                  </p>
+                </div>
+              </div>
+  
+              <div class="col-sm-offset-10 col-sm-2 text-right">
+                <div class="scroll-to-top">
+                  <a href="#"><i class="fa fa-angle-up"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+  
+      <div class="modal fade in" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <h4 class="modal-title">Your Product List</h4>
+            </div>
+            <div class="modal-body">
+              <div class="table-responsive">
+                  <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Preview</th>
+                          <th>Product Title</th>
+                          <th>Color</th>
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody id="bodyCal">
+                        <tr>
+                          <td class="img-prev" width="30" height="30">
+                            <img style="width:150px;height:150px" src="img/16.jpg" />
+                          </td>
+                          <td class="td col1">Rayon Gown Style Beautifully</td>
+                          <td>undefined</td>
+                          <td class="td col2">1</td>
+                          <td class="td col3">2450</td>
+                          <td>
+                            <a
+                              style="cursor:pointer"
+                              id="editChartList"
+                              data-info="Rayon"
+                              gown=""
+                              beautifully=""
+                              ><i class="fa fa-times"></i
+                            ></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="img-prev" width="30" height="30">
+                            <img style="width:150px;height:150px" src="img/20.jpg" />
+                          </td>
+                          <td class="td col1">Design Name SAHELI</td>
+                          <td>undefined</td>
+                          <td class="td col2">1</td>
+                          <td class="td col3">2150</td>
+                          <td>
+                            <a
+                              style="cursor:pointer"
+                              id="editChartList"
+                              data-info="Design"
+                              name=""
+                              saheli=""
+                              ><i class="fa fa-times"></i
+                            ></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="img-prev" width="30" height="30">
+                            <img style="width:150px;height:150px" src="img/30.jpg" />
+                          </td>
+                          <td class="td col1">Zoya silk NB</td>
+                          <td>Green</td>
+                          <td class="td col2">1</td>
+                          <td class="td col3">2400</td>
+                          <td>
+                            <a
+                              style="cursor:pointer"
+                              id="editChartList"
+                              data-info="Zoya"
+                              silk=""
+                              nb=""
+                              ><i class="fa fa-times"></i
+                            ></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>Total Price</td>
+                          <td>7000</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+              
+            </div>
+            <div class="modal-footer">
+              <a href="index.html" class="btn btn-primary" id="continueShopping"
+                >Continue Shopping</a
+              >
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="confirmOrder"
+                style="display:none"
+              >
+                Confirm Order
+              </button>
+              <a
+                type="button"
+                href="checkout.html"
+                class="btn btn-primary"
+                id="checkout"
+              >
+                Go to Shipping
+              </a>
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/instafeed.min.js"></script>
+    <script src="js/jquery.scrolly.js"></script>
+
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

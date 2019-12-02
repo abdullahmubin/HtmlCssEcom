@@ -1,0 +1,46 @@
+// Loop through internal links only
+$("a[href*='cambridge.org/'], a[href*='cambridgedev.org/']").each(function () {
+    var href = $(this).attr('href');
+    if (href.indexOf('assets.cambridge.org') >= 0) {
+        return; // continue
+    }
+
+    try {
+        var url = new URL(href);
+    } catch (err) {
+        console.error(err);
+        console.error(href);
+        return;  // continue
+    }
+
+    // Update specific streams only
+    var streamsRegEx = new RegExp("\/academic|\/bibles|\/cambridgeenglish|\/education|\/about-us|\/branding|\/files");
+
+    if (streamsRegEx.test(url)) {
+        // Replace http to https
+        url.protocol = url.protocol.replace('http:', 'https:');
+
+        if (!CCM_BASE_URL.indexOf('//admin' >= 0)) {
+            // Replace admin to non-admin
+            url.href = url.href.replace('//admin.', '//www.');
+        }
+
+        // `Locale` object is undefined when in Global Content mode.
+        var lcCountryCode = typeof Locale !== 'undefined' ? Locale.countryCode.toLowerCase() : '';
+        var slugs = url.pathname.split('/');
+        if (lcCountryCode && slugs[1].length !== 2) { // Does not have country code
+            url.pathname = '/' + lcCountryCode + url.pathname;
+        }
+
+        // Update the domain name
+        // If href domain is not the same with the current domain
+        if (url.origin !== CCM_BASE_URL) {
+            url.href = url.href.replace(new RegExp(url.origin), CCM_BASE_URL);
+        }
+
+        // Remove trailing slashes
+        url.href = url.href.replace(/\/$/, '');
+
+        $(this).attr('href', url);
+    }
+});

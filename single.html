@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>jQuery camRoll Slider Carousel Plugin Example</title>
+
+    <!-- Google fonts -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Courgette|Kaushan+Script|Lobster"
+      rel="stylesheet"
+    />
+    <!--To Work with icons-->
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <!-- Twitter Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+    <!-- Template CSS -->
+
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link href="css/camroll_slider.css" rel="stylesheet" type="text/css" />
+    <style>
+      
+      .modal-title {
+        font-family: "Kaushan Script", cursive;
+        text-transform: capitalize;
+        font-weight: bold;
+      }
+      .logo {
+        font-family: "Lobster", cursive;
+        text-transform: uppercase;
+        float: none !important;
+        list-style: none;
+        margin-top: 6px;
+      }
+      .floating-search-right {
+        position: absolute;
+        right: 15px;
+        top: 5px;
+      }
+
+      .product-single__description {
+        margin-top: 40px;
+        text-align: left;
+      }
+      .radio-wrapper .single-option-radio__label {
+        display: block;
+        margin-bottom: 10px;
+        cursor: default;
+        font-style: normal;
+      }
+      .single-option-radio {
+        border: 0;
+        padding-top: 0;
+        position: relative;
+        background-color: #fff;
+      }
+      .single-option-radio input {
+        clip: rect(0 0 0 0);
+        clip: rect(0, 0, 0, 0);
+        overflow: hidden;
+        position: absolute;
+        height: 1px;
+        width: 1px;
+      }
+      .single-option-radio input[type="radio"]:checked + label {
+        border-color: #222323;
+      }
+      .single-option-radio label {
+        font-family: Montserrat, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+        line-height: 1;
+        padding: 9px 11px;
+        margin: 3px 4px 7px 3px;
+        font-size: 0.8125em;
+        font-style: normal;
+        background-color: #fff;
+        border: 1px solid #fff;
+        color: #222323;
+      }
+      .product-single__add-to-cart {
+        margin: 0 0 10px 0;
+        display: inline-flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+      }
+      .btn--add-to-cart.btn,
+      .btn--add-to-cart.btn--secondary,
+      .shopify-payment-button
+        .btn--add-to-cart.shopify-payment-button__button--unbranded {
+        padding: 12px 30px;
+      }
+
+      #my-slider {
+        width: 100%;
+        height: 404px;
+        color: white;
+      }
+
+      @media (max-width: 640px) {
+        #my-slider .crs-bar-roll-current {
+          width: 38px;
+          height: 38px;
+        }
+
+        #my-slider .crs-bar-roll-item {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      .navbar {
+        position: relative;
+      }
+      .brand {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px !important;
+        display: block;
+      }
+
+      .text-right {
+        margin-right: 34px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header-top-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-4 hidden-xs">
+            <div class="mainmenu">
+              <div class="navbar-header">
+                <button
+                  type="button"
+                  class="navbar-toggle"
+                  data-toggle="collapse"
+                  data-target=".navbar-collapse"
+                >
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+
+              <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <div class="social-links">
+                    <a
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Find me on Facebook"
+                      href="http://facebook.com/"
+                      target="_blank"
+                      ><i class="fa fa-facebook"></i
+                    ></a>
+                    <a
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="My Twitter profile"
+                      href="http://twitter.com/"
+                      target="_blank"
+                      ><i class="fa fa-twitter"></i
+                    ></a>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 hidden-xs">
+            <ul class="nav navbar-nav">
+              <li class="logo" style="float: right">
+                <a href="index.html" style="font-size:30px;">case de moda</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 hidden-xs">
+            <div class="social-links text-right pull-right">
+              <a
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Product"
+                href="javascript:void(0);"
+                ><i class="fa fa-shopping-cart"><span>(100)</span></i></a
+              >
+              <div class="floating-search-right">
+                <form action="">
+                  <input type="search" placeholder="type keywords" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-8 col-sm-8 col-xs-8 visible-xs">
+            <div class="mainmenu">
+              <ul class="nav navbar-nav">
+                <li class="logo" style="text-align: left;">
+                  <a href="index.html" style="font-size:30px;">case de moda</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-4 visible-xs">
+            <div class="social-links text-right pull-right">
+              <a
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Product"
+                href="javascript:void(0);"
+                ><i class="fa fa-shopping-cart"
+                  ><span class="">(100)</span></i
+                ></a
+              >
+              <div class="floating-search-right" style="right:-25px">
+                <form action="">
+                  <input type="search" placeholder="type keywords" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-bottom-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="menu">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                  <a href="javascript:void(0);"
+                    >Category <i class="fa fa-angle-down" aria-hidden="true"></i
+                  ></a>
+                  <ul>
+                    <li>
+                      <a href="#">Men</a>
+                      <ul>
+                        <li><a href="#">T-Shirt</a></li>
+                        <li><a href="#">Suit</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Shirt</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">Kids</a>
+                      <ul>
+                        <li><a href="#">T-Shirt</a></li>
+                        <li><a href="#">Suit</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Shirt</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">Female</a>
+                      <ul>
+                        <li><a href="#">T-Shirt</a></li>
+                        <li><a href="#">Suit</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Shirt</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">Others</a>
+                      <ul>
+                        <li><a href="#">Others</a></li>
+                        <li><a href="#">Others</a></li>
+                        <li><a href="#">Others</a></li>
+                        <li><a href="#">Others</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="jquery-script-menu ">
+        <div class="col-md-6">
+          <div id="my-slider" class="crs-wrap">
+            <div class="crs-screen">
+              <div class="crs-screen-roll">
+                <div
+                  class="crs-screen-item"
+                  style="background-image: url('img/23.jpg')"
+                >
+                  <div class="crs-screen-item-content">
+                    <h3>40% OFF</h3>
+                  </div>
+                </div>
+                <div
+                  class="crs-screen-item"
+                  style="background-image: url('img/23.jpg')"
+                >
+                  <div class="crs-screen-item-content">
+                    <h3>40% OFF</h3>
+                  </div>
+                </div>
+                <div
+                  class="crs-screen-item"
+                  style="background-image: url('img/23.jpg')"
+                >
+                  <div class="crs-screen-item-content">
+                    <h3>40% OFF</h3>
+                  </div>
+                </div>
+                <div
+                  class="crs-screen-item"
+                  style="background-image: url('img/23.jpg')"
+                >
+                  <div class="crs-screen-item-content">
+                    <h3>40% OFF</h3>
+                  </div>
+                </div>
+                <div
+                  class="crs-screen-item"
+                  style="background-image: url('img/23.jpg')"
+                >
+                  <div class="crs-screen-item-content">
+                    <h3>40% OFF</h3>
+                  </div>
+                </div>
+                <div
+                  class="crs-screen-item"
+                  style="background-image: url('img/23.jpg')"
+                >
+                  <div class="crs-screen-item-content">
+                    <h3>40% OFF</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="crs-bar">
+              <div class="crs-bar-roll-current"></div>
+              <div class="crs-bar-roll-wrap">
+                <div class="crs-bar-roll">
+                  <div
+                    class="crs-bar-roll-item"
+                    style="background-image: url('img/23.jpg')"
+                  ></div>
+                  <div
+                    class="crs-bar-roll-item"
+                    style="background-image: url('img/23.jpg')"
+                  ></div>
+                  <div
+                    class="crs-bar-roll-item"
+                    style="background-image: url('img/23.jpg')"
+                  ></div>
+                  <div
+                    class="crs-bar-roll-item"
+                    style="background-image: url('img/23.jpg')"
+                  ></div>
+                  <div
+                    class="crs-bar-roll-item"
+                    style="background-image: url('img/23.jpg')"
+                  ></div>
+                  <div
+                    class="crs-bar-roll-item"
+                    style="background-image: url('img/23.jpg')"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h1 class="product-single__title" itemprop="name">
+                  Rayon Gown Style Beautifully
+                </h1>
+                <div
+                  class="row col-md-12"
+                  data-price-container=""
+                  style="margin-bottom:15px"
+                >
+                  <span id="PriceA11y" class="visually-hidden"
+                    >Regular price</span
+                  >
+                  <span
+                    class="product-single__price--wrapper hide"
+                    aria-hidden="true"
+                  >
+                    <span
+                      id="ComparePrice"
+                      class="product-single__price--compare-at"
+                    ></span>
+                  </span>
+                  <span
+                    id="ComparePriceA11y"
+                    class="visually-hidden"
+                    aria-hidden="true"
+                    >Sale price</span
+                  >
+                  <span
+                    id="ProductPrice"
+                    class="product-single__price"
+                    itemprop="price"
+                    style="font-family: cursive;"
+                    content="32.0"
+                  >
+                    2450
+                  </span>
+                  <span style="font-family: cursive;">Discount: 0</span>
+                </div>
+                <div class="row form-group col-md-12" style="padding-left:0px;">
+                  <label
+                    for="inputPassword3"
+                    class="col-sm-4 control-label"
+                    style="margin-top:13px"
+                    >Quantity</label
+                  >
+                  <div class="col-sm-8">
+                    <select class="form-control" id="quantityNumber">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row form-group col-md-12" style="padding-left:0px;">
+                  <label
+                    for="inputPassword3"
+                    class="col-sm-4 control-label"
+                    style="margin-top:13px"
+                    >Color</label
+                  >
+                  <div class="col-sm-8" id="colorRadio">
+                    <div class="radio">
+                      <label>
+                        <input
+                          type="radio"
+                          name="selectedColor"
+                          id=""
+                          value="Black"
+                        />
+                        Black
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input
+                          type="radio"
+                          name="selectedColor"
+                          id=""
+                          value="Green"
+                        />
+                        Green
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input
+                          type="radio"
+                          name="selectedColor"
+                          id=""
+                          value="Grey"
+                        />
+                        Grey
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-md-12 grid__item product-single__meta--wrapper medium--five-twelfths large--five-twelfths"
+                >
+                  <div class="product-single__meta">
+                    <div
+                      itemprop="offers"
+                      itemscope=""
+                      itemtype="http://schema.org/Offer"
+                    >
+                      <meta itemprop="priceCurrency" content="CAD" />
+                      <link
+                        itemprop="availability"
+                        href="http://schema.org/InStock"
+                      />
+                      <div class="col-md-12">
+                        <label class="col-sm-4 col-md-3" style="float:left"
+                          >Total Price</label
+                        >
+                        <div class="col-md-6">
+                          <label
+                            id="priceWithDiscount"
+                            style="font-family: cursive;"
+                            >2450</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="product-single__description rte"
+                      itemprop="description"
+                    >
+                      <p>
+                        Printed Kurti having golden print as well Navy Blue
+                        Colour Sizes 38 to 46
+                      </p>
+                    </div>
+                    <div class="col-md-12">
+                      <button
+                        id="addToCart"
+                        class="btn btn-primary btn-sm pull-right"
+                      >
+                        Add To Cart
+                      </button>
+                    </div>
+                    <!-- /snippets/social-sharing.liquid -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a
+                    data-toggle="collapse"
+                    data-parent="#accordion"
+                    href="#collapse2"
+                  >
+                    Delivery and Return policy</a
+                  >
+                </h4>
+              </div>
+              <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div data-test="success">
+                    <p>
+                      Your order of RM 400 or more gets free standard delivery.
+                    </p>
+                    <br />
+                    <ul class="ncss-list-ul mt4-sm mb4-sm">
+                      <li class="ncss-li">
+                        Standard delivered 2-6 Business Days
+                      </li>
+                      <li class="ncss-li">
+                        Express delivered 2-4 Business Days
+                      </li>
+                    </ul>
+                    <br />
+                    <p>
+                      Orders are processed and delivered Monday-Friday
+                      (excluding public holidays)
+                    </p>
+                    <br />
+                    <p>
+                      Lorem members enjoy
+                      <u><a class="u-underline" href="#">free returns</a></u
+                      >. <u><a href="#">Exclusions apply</a></u
+                      >.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a
+                    data-toggle="collapse"
+                    data-parent="#accordion"
+                    href="#collapse3"
+                  >
+                    Comments</a
+                  >
+                </h4>
+              </div>
+              <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="col-md-2">
+                    <img
+                      src="https://image.ibb.co/jw55Ex/def_face.jpg"
+                      style="width:30px;height:30px"
+                      class="img img-rounded img-fluid"
+                    />
+                    <p
+                      class="text-secondary text-center"
+                      style="text-align: left;font-size:11px"
+                    >
+                      15 Minutes Ago
+                    </p>
+                  </div>
+                  <div class="col-md-10" style="margin-bottom:30px;">
+                    <a
+                      class="float-left"
+                      href="https://maniruzzaman-akash.blogspot.com/p/contact.html"
+                      ><strong>Lorem Ipsum</strong></a
+                    >
+                    <p class="pull-right">
+                      <span class="float-right"
+                        ><i class="text-warning fa fa-star"></i
+                      ></span>
+                      <span class="float-right"
+                        ><i class="text-warning fa fa-star"></i
+                      ></span>
+                      <span class="float-right"
+                        ><i class="text-warning fa fa-star"></i
+                      ></span>
+                      <span class="float-right"
+                        ><i class="text-warning fa fa-star"></i
+                      ></span>
+                      <span class="float-right"
+                        ><i class="text-warning fa fa-star"></i
+                      ></span>
+                    </p>
+                    <div class="clearfix"></div>
+                    <p>
+                      Lorem Ipsum is simply dummy text of the pr make but also
+                      the leap into electronic typesetting, remaining
+                      essentially unchanged. It was popularised in the 1960s
+                      with the release of Letraset sheets containing Lorem Ipsum
+                      passages, and more recently with desktop publishing
+                      software like Aldus PageMaker including versions of Lorem
+                      Ipsum.
+                    </p>
+                    <p>
+                      <a class="float-right btn btn-outline-primary ml-2">
+                        <i class="fa fa-reply"></i> Reply</a
+                      >
+                      <a class="float-right btn text-white btn-danger">
+                        <i class="fa fa-heart"></i> Like</a
+                      >
+                    </p>
+                  </div>
+
+                  <form class="form-horizontal">
+                    <h5
+                      style="text-transform: uppercase;font-weight:bold;margin-top: 10px;margin-bottom: 40px"
+                    >
+                      Write a review
+                    </h5>
+                    <div class="form-group">
+                      <label for="inputEmail3" class="col-sm-2 control-label"
+                        >Email</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="inputEmail3"
+                          placeholder="Email"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label"
+                        >Name</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputPassword3"
+                          placeholder="Password"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword3" class="col-sm-2 control-label"
+                        >Comment</label
+                      >
+                      <div class="col-sm-10">
+                        <textarea class="form-control" rows="3"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="" class="col-sm-2 control-label"
+                        >Ratings</label
+                      >
+                      <div class="col-sm-10" style="margin-top:8px">
+                        <span class="float-right"
+                          ><i class="text-warning fa fa-star"></i
+                        ></span>
+                        <span class="float-right"
+                          ><i class="text-warning fa fa-star"></i
+                        ></span>
+                        <span class="float-right"
+                          ><i class="text-warning fa fa-star"></i
+                        ></span>
+                        <span class="float-right"
+                          ><i class="text-warning fa fa-star"></i
+                        ></span>
+                        <span class="float-right"
+                          ><i class="text-warning fa fa-star"></i
+                        ></span>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="main-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="related-posts">
+              <div class="column-padding-fix medium-layout">
+                <h2 class="cat-sec-title">Similar Product</h2>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="single-post long-post">
+                      <a href="single.html">
+                        <div
+                          class="post-featured-img long_1"
+                          style="background-image: url(img/32.jpg)"
+                        ></div>
+                        <div class="post-date">
+                          <p class="month-name">30% OFF</p>
+                        </div>
+
+                        <div class="post-bottom-info">
+                          <p>Item Name</p>
+                          <h2>$200</h2>
+                          <div class="post-samary">
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit. Molestias rem molestiae, quos
+                              tempore. Itaque, veniam?
+                            </p>
+                          </div>
+                          <p class="post-meta">by Brand Name</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="single-post long-post">
+                      <a href="single.html">
+                        <div
+                          class="post-featured-img long_2"
+                          style="background-image: url(img/32.jpg)"
+                        ></div>
+                        <div class="post-date">
+                          <p class="month-name">30% OFF</p>
+                        </div>
+
+                        <div class="post-bottom-info">
+                          <p>Item Name</p>
+                          <h2>$200</h2>
+                          <div class="post-samary">
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur
+                              adipisicing elit. Molestias rem molestiae, quos
+                              tempore. Itaque, veniam?
+                            </p>
+                          </div>
+                          <p class="post-meta">by Brand Name</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-wid">
+                <h2 class="wid-title font-style-title">case de moda</h2>
+                <p class="">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-wid">
+                <h2 class="wid-title font-style-title">Facebook</h2>
+                <div class="single-footer-post">
+                  <a href="single.html">
+                    <img src="img/1.jpg" alt="" class="footer-post-thumb" />
+                    <h2>Lorem Ipsum</h2>
+                  </a>
+                  <p class="post-meta-footer">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry
+                  </p>
+                </div>
+
+                <div class="single-footer-post">
+                  <a href="single.html">
+                    <img src="img/3.jpg" alt="" class="footer-post-thumb" />
+                    <h2>Lorem Ipsum</h2>
+                  </a>
+                  <p class="post-meta-footer">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-wid">
+                <h2 class="wid-title font-style-title">Twitter</h2>
+                <div class="single-footer-post">
+                  <a href="single.html">
+                    <img src="img/2.jpg" alt="" class="footer-post-thumb" />
+                    <h2>Lorem Ipsum</h2>
+                  </a>
+                  <p class="post-meta-footer">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry
+                  </p>
+                </div>
+                <div class="single-footer-post">
+                  <a href="single.html">
+                    <img src="img/1.jpg" alt="" class="footer-post-thumb" />
+                    <h2>Lorem Ipsum</h2>
+                  </a>
+                  <p class="post-meta-footer">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+              <div class="footer-wid">
+                <h2 class="wid-title font-style-title">be our friend</h2>
+                <p>
+                  Nam liber tempor cum soluta nobis eleifend option congue nihil
+                  imperdiet.
+                </p>
+
+                <div class="newsletter-subscribe">
+                  <form action="">
+                    <input type="email" placeholder="Your emai address" />
+                    <input type="submit" value="Subscribe" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10">
+              <div class="copyright-text">
+                <p>
+                  made with
+                  <i class="fa fa-heart"></i> 
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-offset-10 col-sm-2 text-right">
+              <div class="scroll-to-top">
+                <a href="#"><i class="fa fa-angle-up"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="modal fade in" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4 class="modal-title">Your Product List</h4>
+          </div>
+          <div class="modal-body">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Preview</th>
+                    <th>Product Title</th>
+                    <th>Color</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="bodyCal">
+                  <tr>
+                    <td class="img-prev" width="30" height="30">
+                      <img style="width:150px;height:150px" src="img/16.jpg" />
+                    </td>
+                    <td class="td col1">Rayon Gown Style Beautifully</td>
+                    <td>undefined</td>
+                    <td class="td col2">1</td>
+                    <td class="td col3">2450</td>
+                    <td>
+                      <a
+                        style="cursor:pointer"
+                        id="editChartList"
+                        data-info="Rayon"
+                        gown=""
+                        beautifully=""
+                        ><i class="fa fa-times"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="img-prev" width="30" height="30">
+                      <img style="width:150px;height:150px" src="img/20.jpg" />
+                    </td>
+                    <td class="td col1">Design Name SAHELI</td>
+                    <td>undefined</td>
+                    <td class="td col2">1</td>
+                    <td class="td col3">2150</td>
+                    <td>
+                      <a
+                        style="cursor:pointer"
+                        id="editChartList"
+                        data-info="Design"
+                        name=""
+                        saheli=""
+                        ><i class="fa fa-times"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="img-prev" width="30" height="30">
+                      <img style="width:150px;height:150px" src="img/30.jpg" />
+                    </td>
+                    <td class="td col1">Zoya silk NB</td>
+                    <td>Green</td>
+                    <td class="td col2">1</td>
+                    <td class="td col3">2400</td>
+                    <td>
+                      <a
+                        style="cursor:pointer"
+                        id="editChartList"
+                        data-info="Zoya"
+                        silk=""
+                        nb=""
+                        ><i class="fa fa-times"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Total Price</td>
+                    <td>7000</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="index.html" class="btn btn-primary" id="continueShopping"
+              >Continue Shopping</a
+            >
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="confirmOrder"
+              style="display:none"
+            >
+              Confirm Order
+            </button>
+            <a
+              type="button"
+              href="checkout.html"
+              class="btn btn-primary"
+              id="checkout"
+            >
+              Go to Shipping
+            </a>
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/camroll_slider.js"></script>
+    <script>
+      $("#my-slider").camRollSlider();
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/instafeed.min.js"></script>
+    <script src="js/jquery.scrolly.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
